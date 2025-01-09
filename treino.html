@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estiilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js "></script>
+    <script src="https://kit.fontawesome.com/e0b8a276c3.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="medida">
+        <div id="login">
+            <h1>Cadastre-se em nosso site!</h1>
+            <div id="inputs">
+
+                <div class="modeloInput">
+                    <div class="icons">
+                        <i class="fa-solid fa-user-large"></i>
+                    </div>
+                    <input type="text" id="nomeUsuario" placeholder="Informe seu nome">
+                </div>
+
+                <div class="modeloInput">
+                    <div class="icons">
+                        <i class="fa-solid fa-user-large"></i>
+                    </div>
+                    <input type="text" id="sobrenomeUsuario" placeholder="Informe seu sobrenome">
+                </div>
+
+                <div class="modeloInput">
+                    <div class="icons">
+                        <i class="fa-solid fa-at"></i>
+                    </div>
+                    <input type="email" id="emailUsuario" placeholder="Informe seu e-mail">
+                </div>
+
+                <div class="modeloInput">
+                    <div class="icons">
+                        <i class="fa-solid fa-unlock"></i>
+                    </div>
+                    <input type="password" id="senhaUsuario" placeholder="Informe sua senha">
+                </div>
+
+            </div>
+
+            <div id="divBotao">
+                <button id="enviarPHP">
+                    <span id="botao">enviar</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script>
+    $("#enviarPHP").click(function(){
+        // alert("Funcionando");
+        var nomeHTML = $("#nomeUsuario").val();
+        var sobrenomeHTML = $("#sobrenomeUsuario").val();
+        var emailHTML = $("#emailUsuario").val();
+        var senhaHTML = $("#senhaUsuario").val();
+
+    });
+
+    $.ajax({
+        url: "cadastrar.php",
+        method: "POST",
+        data: {
+            nomeUsuarioPHP: nomeHTML,
+            sobrenomeUsuarioPHP: sobrenomeHTML,
+            emailUsuarioPHP: emailHTML,
+            senhaUsuarioPHP: senhaHTML
+        },
+        success:function(resposta){
+            alert(resposta);
+        },
+        error: function(){
+            alert("Não foi possível cadastrar usuário(a).");
+        }
+    });
+
+</script>
+</html>
