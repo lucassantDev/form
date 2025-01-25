@@ -16,6 +16,16 @@ body{
     justify-content: center;
 }
 
+#titulo h1{
+    color: #dfdbdb;
+    font-size: 4rem;
+}
+
+#titulo p{
+    color: #dfdbdb;
+    font-size: 1.5rem;
+}
+
 #login{
     border: 1px solid rgba(128, 128, 128, 0.438);
     width: 60%;
